@@ -25,6 +25,6 @@ jobs:
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: will-lol-browser-home # the name of the project on Deno Deploy
+          project: browser-home # the name of the project on Deno Deploy
           entrypoint: ../server.js # the entrypoint to deploy
           root: .ultra
