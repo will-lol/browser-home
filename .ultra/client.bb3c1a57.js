@@ -1,0 +1,1 @@
+import{jsx as r}from"react/jsx-runtime";import t from"ultra/hydrate.js";import m from"./src/app.tsx";t(document,r(function(){return r(m,{})},{}));

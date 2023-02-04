@@ -1,0 +1,1 @@
+import{defineConfig as t}from"@twind/core";import e from"@twind/preset-autoprefix";import r from"@twind/preset-tailwind";export default t({theme:{},presets:[e(),r()]});

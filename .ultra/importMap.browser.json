@@ -1,0 +1,27 @@
+{
+  "imports": {
+    "./client.tsx": "/client.bb3c1a57.js",
+    "./src/app.tsx": "/src/app.ca402e96.js",
+    "./src/twind/twind.config.ts": "/src/twind/twind.config.7ac6a1d5.js",
+    "./src/twind/twind.ts": "/src/twind/twind.4d2d0816.js",
+    "https://deno.land/": "/vendor/browser/deno.land/",
+    "https://esm.sh/": "/vendor/browser/esm.sh/",
+    "react/jsx-runtime": "/vendor/browser/esm.sh/stable/react@18.2.0/es2022/jsx-runtime.js",
+    "ultra/hydrate.js": "/vendor/browser/deno.land/x/ultra@v2.1.7/hydrate.js",
+    "ultra/hooks/use-asset.js": "/vendor/browser/deno.land/x/ultra@v2.1.7/hooks/use-asset.js",
+    "@twind/core": "/vendor/browser/esm.sh/v106/@twind/core@1.0.1/es2022/core.js",
+    "@twind/preset-autoprefix": "/vendor/browser/esm.sh/v106/@twind/preset-autoprefix@1.0.1/es2022/preset-autoprefix.js",
+    "@twind/preset-tailwind": "/vendor/browser/esm.sh/v106/@twind/preset-tailwind@1.0.1/X-ZS8q/es2022/preset-tailwind.js",
+    "react": "/vendor/browser/esm.sh/stable/react@18.2.0/es2022/react.js",
+    "react-dom/client": "/vendor/browser/esm.sh/v106/react-dom@18.2.0/es2022/client.js"
+  },
+  "scopes": {
+    "/vendor/browser/deno.land/": {
+      "/x/": "/vendor/browser/deno.land/x/"
+    },
+    "/vendor/browser/esm.sh/": {
+      "/stable/": "/vendor/browser/esm.sh/stable/",
+      "/v106/": "/vendor/browser/esm.sh/v106/"
+    }
+  }
+}
