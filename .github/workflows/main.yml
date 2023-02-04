@@ -26,5 +26,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: browser-home # the name of the project on Deno Deploy
-          entrypoint: ../server.js # the entrypoint to deploy
+          entrypoint: ../.ultra/server.js # the entrypoint to deploy
           root: .ultra
