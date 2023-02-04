@@ -21,7 +21,9 @@ server.get("*", async (context) => {
   /**
    * Render the request
    */
-  let result = await server.render(<ServerApp context={context} />);
+  let result = await server.render(<ServerApp context={context} />, {
+    disableHydration: true,
+  });
 
   // Inject the style tag into the head of the streamed response
   const stylesInject = createHeadInsertionTransformStream(() => {

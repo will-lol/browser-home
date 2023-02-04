@@ -3,37 +3,26 @@ import useAsset from "ultra/hooks/use-asset.js";
 import { tw } from "./twind/twind.ts";
 
 export default function App() {
-  console.log("Hello world!");
+  const currentYear = new Date().getFullYear();
+  const yearOffset = new Date(currentYear, 0, 0, 0, 0, 0, 0);
+  const endOfYear = new Date(currentYear + 1, 0, 0, 0, 0, 0, 0);
+  const currentTime = Date.now();
+  const yearProgress = (currentTime - yearOffset.valueOf()) / (endOfYear.valueOf() - yearOffset.valueOf());
+  const yearProgressPercentage = Math.trunc(yearProgress * 1000000)/10000
+
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <title>Ultra</title>
+        <title>Year Progress</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" href={useAsset("/favicon.ico")} />
-        <link rel="stylesheet" href={useAsset("/style.css")} />
       </head>
-      <body>
-        <main>
-          <h1 className={tw(`text-8xl font-mono margin mb-8`)}>
-            <span></span>__<span></span>
-          </h1>
-          <p>
-            Welcome to{" "}
-            <strong>Ultra</strong>. This is a barebones starter for your web
-            app.
-          </p>
-          <p>
-            Take{" "}
-            <a
-              href="https://ultrajs.dev/docs"
-              target="_blank"
-            >
-              this
-            </a>, you may need it where you are going. It will show you how to
-            customize your routing, data fetching, and styling with popular
-            libraries.
-          </p>
+      <body className={tw(`bg-[#F9F9FB] dark:bg-[#2B2A33] `)}>
+        <main className={tw(`h-screen flex flex-col items-center justify-center`)}>
+          <div className={tw(`w-48 h-4 shadow rounded-full bg-gray-200 dark:bg-[#44434d]`)}>
+            <div className={tw(`bg-blue-500 dark:bg-blue-400] h-full shadow rounded-full w-[${yearProgressPercentage.toString()}%]`)}/>
+            <h1 className={tw(`mt-2 font-mono text-xs text-gray-400`)}>{yearProgressPercentage}%</h1>
+          </div>
         </main>
       </body>
     </html>
