@@ -7,10 +7,17 @@
 import { h } from "nano_jsx";
 
 export default function App() {
+    const currentYear = new Date().getFullYear();
+    const yearOffset = new Date(currentYear, 0, 0, 0, 0, 0, 0);
+    const endOfYear = new Date(currentYear + 1, 0, 0, 0, 0, 0, 0);
+    const currentTime = Date.now();
+    const yearProgress = (currentTime - yearOffset.valueOf()) / (endOfYear.valueOf() - yearOffset.valueOf());
+    console.log(yearProgress);
+    
     return(
         <html>
             <body>
-                <p>Hello World!</p>
+                
             </body>
         </html>
     )
