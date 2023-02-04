@@ -23,6 +23,7 @@ server.get("*", async (context) => {
    */
   let result = await server.render(<ServerApp context={context} />, {
     disableHydration: true,
+    generateStaticHTML: true
   });
 
   // Inject the style tag into the head of the streamed response
