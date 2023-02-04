@@ -1,5 +1,11 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
-  }
+    "dev": "deno run --allow-net --unstable --watch main.ts --port 3000"
+  },
+  "imports": {
+    "std": "https://deno.land/std@0.176.0/flags/mod.ts",
+    "nano_jsx": "https://deno.land/x/nano_jsx@v0.0.36/mod.ts",
+    "twind": "https://esm.sh/twind@1.0.7",
+    "twind/": "https://esm.sh/twind@1.0.7/"
+}
 }
