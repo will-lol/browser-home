@@ -19,7 +19,7 @@ export default function App() {
       </head>
       <body className={tw(`bg-[#F9F9FB] dark:bg-[#2B2A33] `)}>
         <main className={tw(`h-screen flex flex-col items-center justify-center`)}>
-          <div className={tw(`w-48 h-4 shadow rounded-full bg-gray-200 dark:bg-[#44434d]`)}>
+          <div className={tw(`w-48 p-0.5 h-5 shadow border border-gray-300 border-solid rounded-full bg-gray-200 dark:bg-[#44434d]`)}>
             <div className={tw(`bg-blue-500 dark:bg-blue-400] h-full shadow rounded-full w-[${yearProgressPercentage.toString()}%]`)}/>
             <h1 className={tw(`mt-2 font-mono text-xs text-gray-400`)}>{yearProgressPercentage}%</h1>
           </div>
