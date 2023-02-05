@@ -4,10 +4,10 @@ import { tw } from "./twind/twind.ts";
 
 export default function App() {
   const currentYear = new Date().getFullYear();
-  const yearOffset = new Date(currentYear, 0, 0, 0, 0, 0, 0);
-  const endOfYear = new Date(currentYear + 1, 0, 0, 0, 0, 0, 0);
+  const yearOffset = Date.UTC(currentYear,0,0,0,0,0,0);
+  const endOfYear = Date.UTC(currentYear + 1,0,0,0,0,0,0);
   const currentTime = Date.now();
-  const yearProgress = (currentTime - yearOffset.valueOf()) / (endOfYear.valueOf() - yearOffset.valueOf());
+  const yearProgress = (currentTime - yearOffset) / (endOfYear - yearOffset);
   const yearProgressPercentage = Math.trunc(yearProgress * 1000000)/10000
 
   return (
