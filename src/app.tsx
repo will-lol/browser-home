@@ -1,4 +1,3 @@
-import useAsset from "ultra/hooks/use-asset.js";
 import { tw } from "./twind/twind.ts";
 
 function sigFig(num: number, figs: number): string {
