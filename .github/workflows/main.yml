@@ -14,12 +14,17 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
         
+      - name: Get deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: "1.30.2"
+          
       - name: Build site
         run: deno task build
 
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: will-lol-browser-home # the name of the project on Deno Deploy
+          project: browser-home # the name of the project on Deno Deploy
           entrypoint: server.js # the entrypoint to deploy
           root: .ultra
