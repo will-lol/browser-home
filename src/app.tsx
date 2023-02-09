@@ -67,7 +67,7 @@ export default function App() {
             <div className={tw(`flex items-start h-full overflow-clip rounded-full w-full`)}>
               <div className={tw(`h-full origin-left shadow bg-blue-500 dark:bg-blue-400 w-full scale-x-[${yearProgress}]`)}/>
             </div>
-            <div className={tw(`relative border border-gray-200 border-solid mt-4 shadow rounded w-fit translate-x-[-50%] z-0 left-[${yearProgressPercentage}%] `)}>
+            <div className={tw(`relative border dark:border-none dark:bg-[#222129] border-gray-200 border-solid mt-4 shadow-inner rounded w-fit translate-x-[-50%] z-0 left-[${yearProgressPercentage}%] `)}>
               <h1 className={tw(`py-1 text-sm px-3 font-mono text-gray-400`)}>{yearProgressPercentage}%</h1>
             </div>
           </div>
