@@ -1,3 +1,4 @@
+import { css } from "@twind/core";
 import { tw } from "./twind/twind.ts";
 
 function sigFig(num: number, figs: number): string {
@@ -62,9 +63,13 @@ export default function App() {
       </head>
       <body className={tw(`bg-[#F9F9FB] dark:bg-[#2B2A33] `)}>
         <main className={tw(`h-screen flex flex-col items-center justify-center`)}>
-          <div className={tw(`w-48 p-0.5 h-5 shadow border border-gray-300 border-solid rounded-full bg-gray-200 dark:bg-[#44434d]`)}>
-            <div className={tw(`bg-blue-500 dark:bg-blue-400] h-full shadow rounded-full w-[${yearProgressPercentage.toString()}%]`)}/>
-            <h1 className={tw(`mt-2 font-mono text-xs text-gray-400`)}>{yearProgressPercentage}%</h1>
+          <div className={tw(`w-96 p-1 h-8  shadow border border-gray-300 border-solid rounded-full bg-gray-200 dark:bg-[#44434d]`)}>
+            <div className={tw(`flex items-start h-full overflow-clip rounded-full w-full`)}>
+              <div className={tw(`h-full origin-left shadow bg-blue-500 dark:bg-blue-400 w-full scale-x-[${yearProgress}]`)}/>
+            </div>
+            <div className={tw(`relative border border-gray-200 border-solid mt-4 shadow rounded w-fit translate-x-[-50%] z-0 left-[${yearProgressPercentage}%] `)}>
+              <h1 className={tw(`py-1 text-sm px-3 font-mono text-gray-400`)}>{yearProgressPercentage}%</h1>
+            </div>
           </div>
         </main>
       </body>
