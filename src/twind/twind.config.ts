@@ -4,7 +4,8 @@ import presetTailwind from "@twind/preset-tailwind";
 
 export default defineConfig({
   theme: {
-
+    extend: {
+    }
   },
   presets: [presetAutoprefix(), presetTailwind()],
 });
