@@ -63,7 +63,7 @@ export default function App() {
       </head>
       <body className={tw(`bg-[#F9F9FB] dark:bg-[#2B2A33] `)}>
         <main className={tw(`h-screen flex flex-col items-center justify-center`)}>
-          <div className={tw(`w-96 p-1 h-8  shadow border border-gray-300 border-solid rounded-full bg-gray-200 dark:bg-[#44434d]`)}>
+          <div className={tw(`w-96 p-1 h-8  shadow border border-gray-300 dark:border-[#505057] border-solid rounded-full bg-gray-200 dark:bg-[#44434d]`)}>
             <div className={tw(`flex items-start h-full overflow-clip rounded-full w-full`)}>
               <div className={tw(`h-full origin-left shadow bg-blue-500 dark:bg-blue-400 w-full scale-x-[${yearProgress}]`)}/>
             </div>
