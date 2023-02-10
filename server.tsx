@@ -27,8 +27,6 @@ function ServerApp({ context }: { context: Context }) {
 }
 
 server.use('*', async (c, next) => {
-  c.res.headers.set("Access-Control-Allow-Origin", "*");
-  c.res.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   c.res.headers.set("Content-Security-Policy", "frame-ancestors *");
 
   await next();
