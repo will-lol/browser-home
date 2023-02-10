@@ -27,7 +27,6 @@ function ServerApp({ context }: { context: Context }) {
 }
 
 server.use('*', async (c, next) => {
-  c.res.headers.set("X-Frame-Options", "ALLOW-FROM https://www.notion.com");
   c.res.headers.set("Access-Control-Allow-Origin", "*");
   c.res.headers.set("Content-Security-Policy", "frame-ancestors *");
 
