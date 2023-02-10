@@ -65,7 +65,7 @@ export function App(props: props) {
   }
   const currentTime = Date.now();
   const yearProgress = (currentTime - start) / (end - start);
-  const yearProgressPercentage = sigFig(yearProgress * 100, 5);
+  const yearProgressPercentage = sigFig(yearProgress * 100, 6);
 
   return (
     <html lang="en">
