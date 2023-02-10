@@ -26,6 +26,11 @@ function ServerApp({ context }: { context: Context }) {
   return <App startDate={start} endDate={end}/>;
 }
 
+server.use('*', async (c, next) => {
+  c.res.headers.set("Access-Control-Allow-Origin", "*");
+  await next();
+});
+
 server.get("*", async (context) => {
   /**
    * Render the request
