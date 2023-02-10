@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.164.0/http/server.ts";
 import { type Context, createServer } from "ultra/server.ts";
-import App from "./src/app.tsx";
+import { App, props } from "./src/app.tsx";
 
 // Twind
 import { createHeadInsertionTransformStream } from "ultra/stream.ts";
@@ -13,8 +13,17 @@ const server = await createServer({
 
 function ServerApp({ context }: { context: Context }) {
   const requestUrl = new URL(context.req.url);
+  let start: string | number | null = requestUrl.searchParams.get("start");
+  let end: string | number | null = requestUrl.searchParams.get("end");
 
-  return <App />;
+  if (start && end) {
+    start = parseInt(start);
+    end = parseInt(end);
+  } else {
+    start = null;
+    end = null;
+  }
+  return <App startDate={start} endDate={end}/>;
 }
 
 server.get("*", async (context) => {

@@ -46,12 +46,25 @@ function sigFig(num: number, figs: number): string {
   }
 }
 
-export default function App() {
+export type props = {
+  startDate: number | null;
+  endDate: number | null;
+}
+
+export function App(props: props) {
+  let start: number, end: number;
+
   const currentYear = new Date().getFullYear();
-  const startOfYear = Date.UTC(currentYear,0,1,0,0,0,0);
-  const endOfYear = Date.UTC(currentYear + 1,0,0,0,0,0,0);
+  console.log(props)
+  if ((props.startDate != null) && (props.endDate != null) && (props.startDate < Date.now()) && (props.endDate > Date.now())) {
+    start = props.startDate;
+    end = props.endDate;
+  } else {
+    start = Date.UTC(currentYear,0,1,0,0,0,0);
+    end = Date.UTC(currentYear + 1,0,0,0,0,0,0);  
+  }
   const currentTime = Date.now();
-  const yearProgress = (currentTime - startOfYear) / (endOfYear - startOfYear);
+  const yearProgress = (currentTime - start) / (end - start);
   const yearProgressPercentage = sigFig(yearProgress * 100, 5);
 
   return (
