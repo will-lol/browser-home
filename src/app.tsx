@@ -112,7 +112,7 @@ export function App(props: props) {
             </div>
             <div
               className={tw(
-                `absolute bg-blue-500 dark:bg-blue-400 rounded-full bottom-[170%] mt-3 w-fit translate-x-[-50%] z-0 left-[${yearProgressPercentage}%] `
+                `absolute bg-blue-500 rounded-full bottom-[170%] mt-3 w-fit translate-x-[-50%] z-0 left-[${yearProgressPercentage}%] `
               )}
             >
               <h1 className={tw(`py-1 text-sm px-3 font-mono text-gray-100`)}>
@@ -120,7 +120,7 @@ export function App(props: props) {
               </h1>
               <svg
                 className={tw(
-                  `text-blue-500 dark:text-blue-400 absolute left-1/2 translate-x-[-50%] rotate-180 top-3/4`
+                  `text-blue-500 absolute left-1/2 translate-x-[-50%] rotate-180 top-3/4`
                 )}
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
