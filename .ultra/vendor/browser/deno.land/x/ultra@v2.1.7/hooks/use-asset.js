@@ -1,1 +1,0 @@
-import{useContext as t,useMemo as e}from"react";import r from"./asset-context.js";export default function o(o){if(void 0===o)throw Error("a path must be supplied");if(!1===o.startsWith("/"))throw Error(`The path provided to the useAsset hook must begin with "/" received: ${o}`);let i=t(r)||new Map(globalThis.__ULTRA_ASSET_MAP||[]);return e(()=>i.get(o)||o,[o])}
