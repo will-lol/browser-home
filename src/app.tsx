@@ -1,54 +1,6 @@
 import { tw } from "./twind/twind.ts";
 import { useEffect, useRef } from "react";
 
-function sigFig(num: number, figs: number): string {
-  const numStringArray = num.toString().split(".");
-  const integers = Array.from(numStringArray[0]);
-  let decimals: Array<string>;
-  try {
-    decimals = Array.from(numStringArray[1]);
-  } catch {
-    decimals = [];
-  }
-  let disparity = figs - (integers.length + decimals.length); //negative if there figs to remove, positive if there are figs to add
-
-  if (disparity > 0) {
-    while (disparity != 0) {
-      decimals.push("0");
-      disparity--;
-    }
-  } else {
-    while (decimals.length > 0 && disparity != 0) {
-      decimals.pop();
-      disparity++;
-    }
-
-    if (disparity == 0) {
-      return repairString(integers, decimals);
-    } else {
-      let position = integers.length - 1;
-      while (disparity != 0) {
-        integers[position] = "0";
-        position--;
-        disparity++;
-      }
-    }
-  }
-
-  return repairString(integers, decimals);
-
-  function repairString(
-    integers: Array<string>,
-    decimals: Array<string>
-  ): string {
-    if (decimals.length > 0) {
-      return integers.join("") + "." + decimals.join("");
-    } else {
-      return integers.join("");
-    }
-  }
-}
-
 export type props = {
   startDate: number | null;
   endDate: number | null;
@@ -72,7 +24,7 @@ export function App(props: props) {
   }
   const currentTime = Date.now();
   const yearProgress = (currentTime - start) / (end - start);
-  const yearProgressPercentage = sigFig(yearProgress * 100, 6);
+  const yearProgressPercentage = (yearProgress * 100).toPrecision(6);
 
   const bar = useRef<HTMLDivElement>(null);
   useEffect(() => {
