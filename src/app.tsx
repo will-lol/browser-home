@@ -24,7 +24,7 @@ export function App(props: props) {
   const currentTime = Date.now();
   const yearProgress = (currentTime - start) / (end - start);
   const yearProgressPercentage = (yearProgress * 100).toPrecision(6);
-
+  
   return (
     <html lang="en">
       <head>
