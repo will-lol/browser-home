@@ -26,14 +26,6 @@ export function App(props: props) {
   const yearProgress = (currentTime - start) / (end - start);
   const yearProgressPercentage = (yearProgress * 100).toPrecision(6);
 
-  const bar = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    bar.current?.animate(
-      [{ transform: "scale(1)" }, { transform: `scale(${yearProgress})` }],
-      { duration: 700, easing: "ease-out" }
-    );
-  });
-
   return (
     <html lang="en">
       <head>
@@ -56,7 +48,6 @@ export function App(props: props) {
               )}
             >
               <div
-                ref={bar}
                 className={tw(
                   `h-full origin-left shadow bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 w-full scale-x-[${yearProgress}]`
                 )}
