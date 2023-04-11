@@ -1,7 +1,7 @@
 {
   "imports": {
     "./client.tsx": "/client.956e026f.js",
-    "./src/app.tsx": "/src/app.a6ec8f31.js",
+    "./src/app.tsx": "/src/app.ad493a14.js",
     "./src/twind/twind.config.ts": "/src/twind/twind.config.a9f81726.js",
     "./src/twind/twind.ts": "/src/twind/twind.344ef886.js",
     "https://deno.land/": "/vendor/browser/deno.land/",
