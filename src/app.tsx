@@ -1,5 +1,4 @@
 import { tw } from "./twind/twind.ts";
-import { useEffect, useRef } from "react";
 
 export type props = {
   startDate: number | null;
