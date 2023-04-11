@@ -1,7 +1,7 @@
 {
   "imports": {
     "./server.tsx": "./server.js",
-    "./src/app.tsx": "./src/app.ad493a14.js",
+    "./src/app.tsx": "./src/app.564d8ee3.js",
     "./src/twind/twind.config.ts": "./src/twind/twind.config.a9f81726.js",
     "./src/twind/twind.ts": "./src/twind/twind.344ef886.js",
     "https://deno.land/": "./vendor/server/deno.land/",
@@ -9,10 +9,10 @@
     "react/jsx-runtime": "./vendor/server/esm.sh/stable/react@18.2.0/deno/jsx-runtime.js",
     "ultra/server.ts": "./vendor/server/deno.land/x/ultra@v2.2.1/server.ts",
     "ultra/stream.ts": "./vendor/server/deno.land/x/ultra@v2.2.1/stream.ts",
-    "react": "./vendor/server/esm.sh/stable/react@18.2.0/deno/react.js",
     "@twind/core": "./vendor/server/esm.sh/v106/@twind/core@1.0.1/deno/core.js",
     "@twind/preset-autoprefix": "./vendor/server/esm.sh/v106/@twind/preset-autoprefix@1.0.1/deno/preset-autoprefix.js",
     "@twind/preset-tailwind": "./vendor/server/esm.sh/v106/@twind/preset-tailwind@1.0.1/X-ZS8q/deno/preset-tailwind.js",
+    "react": "./vendor/server/esm.sh/stable/react@18.2.0/deno/react.js",
     "react-dom/server": "./vendor/server/esm.sh/v106/react-dom@18.2.0/deno/server.js"
   },
   "scopes": {
