@@ -1,4 +1,3 @@
-import { RouteContext } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 
 export default function Home(props: PageProps) {
