@@ -27,7 +27,7 @@ export default function Home(props: PageProps) {
           />
         </div>
         <div
-          class={`shadow absolute bg-blue-500 rounded-full bottom-[170%] mt-3 w-fit translate-x-[-50%] z-0 left-[${yearProgressPercentage}%]`}
+          class={`ml-[-0.5%] shadow absolute bg-blue-500 rounded-full bottom-[170%] mt-3 w-fit translate-x-[-50%] z-0 left-[${yearProgressPercentage}%]`}
         >
           <h1 class="py-1 text-sm px-3 font-mono text-gray-100">
             {yearProgressPercentage}%
