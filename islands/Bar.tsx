@@ -51,8 +51,7 @@ export default function Bar(props: BarProps) {
       }
 
       fn();
-      console.log("updated");
-
+      
       setTimeout(update, duration)
     }
   }
