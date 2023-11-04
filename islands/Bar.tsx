@@ -71,7 +71,7 @@ export default function Bar(props: BarProps) {
           class={`transition-all duration-1000 ease-linear left-[${(getCappedProgress(props.start, props.end) * 100).toPrecision(6) + "%"}] shadow absolute bg-blue-500 rounded-full bottom-[200%] mt-3 w-fit translate-x-[-50%] z-0`}
         >
           <h1 ref={percentage} class="py-1 text-sm px-3 font-mono text-gray-100">
-            {(getRealProgress(props.start, props.end) * 100).toPrecision(6) + "%"}%
+            {(getRealProgress(props.start, props.end) * 100).toPrecision(6) + "%"}
           </h1>
           <svg
             class="text-blue-500 absolute left-1/2 translate-x-[-50%] rotate-180 top-3/4"
