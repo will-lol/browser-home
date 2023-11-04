@@ -6,8 +6,15 @@ interface BarProps {
 }
 
 export default function Bar(props: BarProps) {
-  function getCurrentProgress(start: number, end: number): number {
+  function getRealProgress(start: number, end: number): number {
     const currentTime = Date.now();
+    return (currentTime - start) / (end - start);
+  }
+  function getCappedProgress(start: number, end: number): number {
+    const currentTime = Date.now();
+    if (currentTime > end) {
+      return 1;
+    }
     return (currentTime - start) / (end - start);
   }
 
@@ -18,10 +25,10 @@ export default function Bar(props: BarProps) {
   useEffect(() => {
     updater(1000, () => {
       if (bar.current && label.current && percentage.current) {
-        const progress = getCurrentProgress(props.start, props.end);
+        const progress = getCappedProgress(props.start, props.end);
         bar.current.style.scale = `${progress} 1`;
         label.current.style.left = `${(progress * 100).toPrecision(6)}%`;
-        percentage.current.innerText = `${(progress * 100).toPrecision(6)}%`;
+        percentage.current.innerText = `${(getRealProgress(props.start, props.end) * 100).toPrecision(6)}%`;
       }
     });  
   }, []);
@@ -55,17 +62,17 @@ export default function Bar(props: BarProps) {
       <div class="flex relative items-start h-full rounded-full w-full">
         <div class="flex h-full w-full rounded-full overflow-hidden">
           <div ref={bar}
-            style={`scale: ${getCurrentProgress(props.start, props.end)} 1`}
+            style={`scale: ${getCappedProgress(props.start, props.end)} 1`}
             class={`transition-all duration-1000 ease-linear h-full origin-left shadow bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 w-full`}
           />
         </div>
 
         <div
           ref={label}
-          class={`transition-all duration-1000 ease-linear left-[${(getCurrentProgress(props.start, props.end) * 100).toPrecision(6) + "%"}] shadow absolute bg-blue-500 rounded-full bottom-[200%] mt-3 w-fit translate-x-[-50%] z-0`}
+          class={`transition-all duration-1000 ease-linear left-[${(getCappedProgress(props.start, props.end) * 100).toPrecision(6) + "%"}] shadow absolute bg-blue-500 rounded-full bottom-[200%] mt-3 w-fit translate-x-[-50%] z-0`}
         >
           <h1 ref={percentage} class="py-1 text-sm px-3 font-mono text-gray-100">
-            {(getCurrentProgress(props.start, props.end) * 100).toPrecision(6) + "%"}%
+            {(getRealProgress(props.start, props.end) * 100).toPrecision(6) + "%"}%
           </h1>
           <svg
             class="text-blue-500 absolute left-1/2 translate-x-[-50%] rotate-180 top-3/4"
