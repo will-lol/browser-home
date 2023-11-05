@@ -25,6 +25,7 @@ export default function Bar(props: BarProps) {
   useEffect(() => {
     updater(1000, () => {
       if (bar.current && label.current && percentage.current) {
+        console.log("updating");
         const progress = getCappedProgress(props.start, props.end);
         bar.current.style.scale = `${progress} 1`;
         label.current.style.left = `${(progress * 100).toPrecision(6)}%`;
@@ -42,7 +43,7 @@ export default function Bar(props: BarProps) {
     })
 
     addEventListener("blur", () => controller.abort());
-  
+    
     update();
 
     function update() {
